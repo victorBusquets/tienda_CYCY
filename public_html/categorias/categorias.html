@@ -1,0 +1,13 @@
+<div class='sectiontitle'><p>Categorias</p></div>
+<div class='section'>
+    <div class='article art puntero' 
+         ng-repeat="categoria in categorias">
+        <a ng-href="#/productos/{{categoria.idCategoria}},0">
+        <h3>{{categoria.nombreCategoria}}</h3>
+        <div class='imagen'>
+            <img ng-src="img/categorias/{{categoria.imagen}}" alt="{{categoria.nombreCategoria}}"/>
+        </div>
+        <div class='description' title="{{categoria.descripcion}}">{{categoria.descripcion}}</div>
+        </a>
+    </div>
+</div>

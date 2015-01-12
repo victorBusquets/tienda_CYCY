@@ -1,0 +1,694 @@
+//Variables
+$font:"Alien";
+$color-letra:#fff;
+
+@font-face {
+    font-family: "Alien";
+    src: url("../fonts/alienleague.ttf"); 
+}
+
+//Mixin
+@mixin boton {
+    border-top: 1pt solid #6e666e;
+    background: #2b2a2b;
+    background: -webkit-gradient(linear, left top, left bottom, from(#bfb9bf), to(#2b2a2b));
+    background: -webkit-linear-gradient(top, #bfb9bf, #2b2a2b);
+    background: -moz-linear-gradient(top, #bfb9bf, #2b2a2b);
+    background: -ms-linear-gradient(top, #bfb9bf, #2b2a2b);
+    background: -o-linear-gradient(top, #bfb9bf, #2b2a2b);
+    padding: 3.5pt 7pt;
+    border-radius: 2pt;
+    box-shadow: rgba(0,0,0,1) 0 1pt 0;
+    text-shadow: rgba(0,0,0,.4) 0 1pt 0;
+    color: #ffffff;
+    font-size: 8pt;
+    font-family: Helvetica, Arial, Sans-Serif;
+    text-align: center;
+    transition: background .5s;
+    cursor: pointer;
+    width: 80%;
+    margin: 8pt auto 5pt;
+    &:hover {
+        background: #555;
+        box-shadow: inherit;
+    }
+}
+
+//Esta clase se la damos a todos los elementos que 
+//queremos que tengan el atributo cursor:pointer;
+.puntero{
+    cursor: pointer;
+}
+
+//Le quitamos el estilo a los enlaces
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 960px;
+    background: url("../img/fondo.jpg") fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    font-size: 1em;
+}
+/*INICIO la Cabecera*/
+header {
+    font-family: $font;
+    width:100%;
+    max-width: 960px;
+    text-align: center;
+    position: fixed;
+    z-index: 100;
+    border-radius: 0 0 8px 8px;
+    //Colocamos el fondo en el nav, para asi poder tener el login dentro del header
+    //sin que el login tenga el fondo del menu
+    nav {
+        background:url('../img/barra-logo.jpg') no-repeat;
+        background-size: 100% 100%;
+        box-shadow: 0pt 0pt 10pt black;
+        height:100%;
+        padding-top: 1pt;
+        ul {
+            list-style: none;
+            overflow: hidden;
+            li {
+                float: right;
+                font-size: 16;
+                color:$color-letra;
+                a {
+                    margin: 20px;
+                    text-decoration: none;
+                    &:hover {
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .empresa{
+                float:left;
+                a{
+                    text-decoration: none;
+                    font-size: 18;
+                    color:wheat;
+                    &:hover{
+                        font-weight: bold;
+                        background: transparent;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+/*Codigo buscador y resultados*/
+#buscador{
+    float:right;
+    margin:2pt 5pt 0 0;
+    width:150pt;
+    input{
+        width:100%;
+        &:hover{
+            background: #E6E6E6;
+        }
+    }
+}
+
+.resultado{
+    background:white;
+    width:100%;
+    height:30pt;
+    border-top:solid black 1pt;
+    cursor:pointer;
+    box-shadow: inset -2px 3px 30px -10px rgba(0,0,0,0.75);
+
+    img{
+        height:100%;
+        width:15pt;
+        float:left;
+    }
+
+    &:hover{
+        background:#DFDFDF;
+        box-shadow: inset -2px 3px 30px -5px rgba(0,0,0,0.75);
+    }
+}
+
+#resultadoBusqueda{
+    overflow-y:auto;
+    max-height:100pt;
+    width:210pt;
+    background:blue;
+    border:black solid 1pt;
+    display:none;
+    float:right;
+    margin-top: -2pt;
+}
+/*Fin codigo buscador y resultados*/
+
+
+#logbox {
+    position: relative;
+    float:right;
+    background: red; 
+    padding: 4pt 7pt;
+    background: rgba(40,30,90,.9);
+    input{
+        margin-bottom: 5pt;
+        //Hacemos que cambie el color de la letra y el fondo para que el 
+        //usuario tenga mas facil saber donde esta escribiendo
+        transition:background 1s;
+        &:focus{
+            background: activecaption;
+            color:black;
+        }
+    }
+    a{
+        text-decoration: none;
+        font-size: 15;
+        padding-left: 5pt;
+        color:wheat;
+        &:hover{
+            font-weight: bold;
+            background: transparent;
+        }
+    }
+}
+/*FIN Cabecera*/
+
+/*INICIO Cuerpo de la Pagina*/
+section {
+    background: rgba(255,255,255,.7);
+    padding: 45pt 0pt 10pt;
+    font:{
+        family: monospace;
+        size: 14px;
+    };
+
+    /*INICIO Menu Lateral*/
+    aside {
+        float:left;
+        background: rgba(40,30,90,.6);
+        box-shadow: 1pt 0pt 10pt black;
+        position:fixed;
+        border-radius: 0px 10px 10px 0px;
+        z-index:100;
+
+        &:hover{
+            nav{
+                div#menutitle{
+                    width: 1pt;
+                }
+                div#menutitle p{
+                    display: none;
+                }
+                div.links{
+                    width: auto;
+                    height: auto;
+                }
+            }
+            border-radius: 0px;
+        }
+
+        nav{
+            #menutitle{
+                margin: 0 15pt; 
+                font-size: 14pt;
+            }
+            div{
+                color:white;
+                text-align: center;
+
+            }
+
+            div.links{
+                width: 0pt;
+                height: 0pt;
+                padding-left: 0;
+                list-style: none;
+                overflow: hidden;
+
+                .cat{
+                    background: rgba(40,30,90,.8);  
+                }
+                div{
+                    padding: 5pt 20pt 5pt 10pt;                        
+                    color: $color-letra;
+
+                    &:hover{
+                        font-weight: bold;
+                        background: rgba(40,30,90,1);
+                    }
+
+                    &:visited {
+                        color:$color-letra;
+                    }
+                }
+
+            }
+        }
+    }
+
+    /*FIN Menu Lateral*/
+    /*INICIO Contenido de la Pagina*/
+    main {
+        color: #007;
+        padding-left: 100px;
+        /*Carrito de la compra*/
+        #carrito{
+            z-index: 100;
+            text-align: center;
+            position:fixed; 
+            right: 0; 
+            background: white; 
+            border: solid black 1pt;
+            border-radius: 12pt 0 0 12pt;
+            height: 160pt; 
+            width: 175pt;
+            right: -150pt;
+            transition:right 1s;
+            margin-top:120pt;
+            &:hover{
+                right: -1pt;
+            }
+            #izq-carrito{
+                width: 25pt;
+                float:left;
+                #caja-logo-carrito{
+                    height: 20pt;
+                    margin:3pt;
+                    margin-top: 70pt;
+                    img{
+                        width: 20pt;
+                        height: 20pt;
+                    }
+                    img.carrito-lleno{
+                        position: relative;
+                        top:-23pt;
+                    }
+                }
+                #cantidad-carrito{
+                    margin: 0;
+                }
+            }
+            #der-carrito{
+                border-left: solid gray 1pt;
+                width: 149pt;
+                height: 100%;
+                float:left;
+                background: gainsboro;
+                #contenido-carrito{
+                    overflow-y:auto;
+                    height: 80%;    
+                    width: 100%;
+                    div.art-carrito{
+                        background: rgba(250,250,250,.1);
+                        box-shadow: inset 10px -13px 0px -12px rgba(0,0,0,0.75);
+                        height: 50%;
+                        width:100%;
+                        div.boton-eliminar{
+                            height: 10pt;
+                            width:  10pt;
+                            margin: 2pt 2pt 0 0;
+                            background: rgba(240,0,0,0.6);
+                            border-radius: 200px 200px 200px 200px;
+                            float:right;
+                            cursor: pointer;
+                            z-index: 101;
+                            font-size: 9pt;
+                            color:white;
+
+                            &:hover{
+                                background: rgba(250,0,0,1);   
+                            }
+                        }
+                        img{
+                            margin: 2pt;
+                            float: left;
+                            max-width: 35pt;
+                            height: 58pt;
+                        }
+                        p{
+                            width: 85pt;   
+                            float:left;
+                            height: 23%;
+                            padding: 0;
+                            margin: 0;
+                            overflow: hidden;
+                        }
+                        div.unidades{
+                            margin-right: 7pt;
+                            width: 90pt;  
+                            height: 25%;
+                            float: left;
+                            div{
+                                float: left;
+                                height: 100%; 
+                                width: 40%;
+                                background: #bfb9bf;
+                                background: white;
+                            }
+                            div.boton{
+                                width: 30%;
+                                background: #bfb9bf;
+                                cursor:pointer;
+                                box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.75);
+                                &:hover{
+                                    box-shadow: inset 0px 0px 3px 3px rgba(0,0,0,0.75);
+                                }
+                            }
+                        }
+                    }
+                }
+                div#precio-total{
+                    height: 10%; 
+                    background:white;
+                    p{
+                        margin: 0;
+                    }
+                }
+                div.ver-carrito{
+                    color:white;
+                    cursor: pointer;
+                    background: rgba(40,30,90,.6);
+                    height: 10%;
+                    transition:background 0.4s;
+                    &:hover{
+                        background: rgba(40,30,90,.8);
+                    }
+                }
+            }
+        }
+        /*Fin carrito de la compra*/
+        img.top{
+            width: 93%;
+            height: 40%;
+            margin-bottom: 25px;
+            opacity: 0.7;
+            border-radius: 5pt; 
+        }
+        .boton_orden{
+            width: 100%;
+            float:left;
+        }
+        .desc_tienda{
+            background: rgba(240,240,240,.7);
+            border-width: 5pt;
+            border-style:outset;
+            border-color:rgba(40,30,90,.6);
+            margin-right: 50pt;
+            padding: 5pt;
+            color:black;
+        }
+        //Esto es para cargar los detalles del producto
+        #detalleproducto{
+
+            .imagen{
+                overflow:hidden;
+                height: 500px;
+                img{
+                    height: 90%;
+                    max-width: 450px;
+                    margin-bottom: 6px;
+                    background-color: rgba(255, 252, 255, .4);
+                    padding: 15px 10px;
+                    border: 1px solid rgba(0,0,0,.3);
+                }
+            }
+
+            margin-right: 25pt;
+            text-align: center;
+        }
+
+        .art-det-carrito{
+            border: solid black 1pt;
+            background: white;
+            width: 95%;
+            text-align: center;
+            padding: 3pt;
+            margin-bottom: 5pt;
+        }
+
+        /*Secciones (Más vendidos, Ofertas, etc...)*/
+        .sectiontitle{
+            font:{
+                size: 28px;
+                weight: bold;
+            }
+            padding-left: 35px;
+            color: rgba(43,44,200,.9);
+        } 
+        .section{
+            text-align: center;
+            width: 95%;
+            padding-left: 1.5%;
+            height: auto;
+            display: inline-block;
+            margin-bottom: 20px;
+            .article{
+                margin: 10px 0 6px;
+                width: 29%;
+                border: 1px solid #666;
+                float: left;
+                margin-right: 1%;
+                padding: 1%;
+                background-color: rgba(225, 232, 245, .4);
+                div{
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    width: 95%;
+                    white-space: nowrap;
+                }
+                .imagen{
+                    overflow:hidden;
+                    height: 230px;
+                    img{
+                        height: 90%;
+                        max-width: 150px;
+                        margin-bottom: 6px;
+                        background-color: rgba(255, 252, 255, .4);
+                        padding: 15px 10px;
+                        border: 1px solid rgba(0,0,0,.3);
+                    }
+                }
+                .description, .price{
+                    margin-left: 13px;
+                    padding-top: 3px;
+                }
+                .price{
+
+                }
+                .buy{
+                    @include boton;
+                }
+            }
+        }
+    }
+    #orden{
+        margin-top: 10pt;
+    }
+    //Le damos un tamaño minimo al contenedor
+    #contenedor{
+        min-height: 200pt;
+        div.carrito{
+            background: white;
+            div.articulo{
+                background: gray; 
+            }
+        }
+    }
+    /*FIN Contenidos de la Pagina*/
+}
+/*FIN Cuerpo de la Pagina*/
+/*INICIO Pie de Pagina*/
+footer {
+    width: 100%;
+    clear: both;
+    font-size: 0.90em;
+    font-family: $font;
+    background: url("../img/barra.jpg") 100% 100% no-repeat;
+    color: white;
+    box-shadow: 5pt -5pt 8pt black; 
+    img {
+        height: 21pt;
+        width: 21pt;
+        margin: 2pt; }
+    #text-footer {
+        text-align: center;
+        width: 40%;
+        float: left;
+        padding: 10pt;
+        padding-left: 35pt; 
+
+        span {
+            padding-left: 1em; 
+        }
+    }
+    #icon-footer {
+        padding: 3pt;
+        padding-right: 6%;
+        text-align: right; 
+    }
+}
+/*FIN Pie de Pagina*/
+
+.artcat{
+    display: none;
+}
+
+//Diseño responsive
+//Pantallas hasta 960pt
+@media all and (min-width: 421px) and (max-width: 760px){
+    /*INICIO Responsive Contenido de la Pagina*/
+    main {
+        .section .article{
+            height:265pt;
+            img{
+                width: 80%;
+                height: 195pt;
+            }
+        }
+    }
+    /*FIN Responsive Contenido de la Pagina*/
+    /*INICIO Responsive Pie de Pagina*/
+    footer img {
+        height: 16pt;
+        width: 16pt;
+        margin: 1.5pt; 
+    }
+
+    #text-footer{
+        font-size: 12;
+        padding: 8pt;
+    }
+    /*FIN Responsive Pie de Pagina*/
+}
+
+//Pantallas de hasta 480 pt
+@media all and (max-width: 420pt) {
+    //Modificamos los tamaños y la configuración del header para que se vea correctamente
+    //le quitamos el fixed
+    //en pantallas pequeñas (por ejemplo dispositivos moviles)
+    /*INICIO Responsive Cabecera*/
+    header {
+        position: relative;
+        nav ul{
+            margin-left: -20pt;
+            li a {
+                margin: 10px;
+            }
+        }
+    }
+    /*FIN Responsive Cabecera*/
+
+    //Reducimos el tamaño del buscador
+    #buscador{
+        float:right;
+        margin:2pt 5pt 0 0;
+        width:30pt;
+        input{
+            font-size: 8pt;
+            width:100%;
+        }
+    }
+
+    //Cambiamos los tamaños de los contenidos (contenido principal)
+    /*INICIO Responsive Contenido Principal*/
+    section{
+        padding-top:0pt;
+
+        //Cambiamos el menu para que no sea fixed y ademas deje de ser desplegable
+        aside{
+            width:100%;
+            position: initial;
+            margin-bottom:10pt;
+            nav div#menutitle{
+                display: none;    
+            }
+            div.links{
+                display: initial;
+                div{
+                    display: none; 
+                }
+                div.cat{
+                    display: inline-block;
+                    width: 100%;
+                    height: 10pt;
+                    font-size: 8pt;
+                    float:left;
+                }
+            }
+        }
+
+
+        //Ocultamos la imagen y el texto de nuestra cabecera ya que ocupa mucho y no es importante
+        main img.top{
+            display:none;
+        }
+        .desc_tienda{
+            display:none;   
+        }
+        width:100%;
+        .sectiontitle p{
+            display:none;
+        }
+        main {
+            width: 55%;
+            .section{
+                width: 100%;        
+
+                .art{
+                    // display: none;
+                }
+
+                .artcat {
+                    display: inherit;
+                }
+
+                .article{
+                    width: 100%;
+                    img{
+                        width: 85%;
+                        margin:{
+                            top: 2%;
+                            left: 2%;
+                        }
+                    }
+                }
+            }
+        }
+
+        main #detalleproducto .imagen{
+            height: 150pt;
+            width:90%;
+            img{
+                height: 90%;  
+                width:90%;
+            }
+        }
+    }
+    /*FIN Responsive Contenido Principal*/
+
+    //Cambiamos los tamaños del footer y sus imagenes
+    /*INICIO Responsive Pie de Pagina*/
+    footer{
+        width: 100%;
+        font-size: 0.6em;
+        img {
+            height: 12pt;
+            width: 12pt;
+            margin: 1pt;
+        }
+        #text-footer{
+            padding: 5pt;
+        }
+    }
+    /*FIN Responsive Pie de Pagina*/
+
+
+
+}
+/*# sourceMappingURL=style-new.css.map */

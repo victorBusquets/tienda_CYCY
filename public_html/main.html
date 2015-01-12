@@ -1,0 +1,21 @@
+<img class='top' src='img/cycyheader.png' alt='Imagen top'>
+<div  class='desc_tienda'>
+    <p>Bienvenido a nuestra tienda on-line, un espacio dónde 
+    te ofrecemos el mayor surtido en disfraces, disfraces para 
+    Halloween, bromas y accesorios para cualquier tipo de fiesta, evento o 
+    acontecimiento.</p>
+    <p> Cualquier necesidad tiene respuesta en nuestra tienda, 
+    desde el más sencillo disfraz infantil, hasta cualquier indumentaria que 
+    requiera precisos detalles.</p>
+</div>
+<div class='sectiontitle'><p>Articulos en promoción</p></div>
+<div class='section'>
+    <div class='article art puntero' ng-repeat="articulo in articulosPromocion">
+        <a ng-href="#/detallesProducto/{{articulo.idProducto}}">
+            <h3>{{articulo.nombreProducto}}</h3>
+            <div class='imagen'><img ng-src="img/productos/{{articulo.nombreCategoria}}/{{articulo.imagen}}" alt="{{articulo.nombreProducto}}"/></div>
+            <div class='description' title='{{articulo.descripcion}}'>{{articulo.descripcion}}</div>
+            <div class='price'>Precio: <span>{{articulo.precioUnidad}}</span> €</div>
+        </a>
+    </div>
+</div>

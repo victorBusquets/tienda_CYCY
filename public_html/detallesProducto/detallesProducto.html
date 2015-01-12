@@ -1,0 +1,11 @@
+<div id='detalleproducto' ng-repeat="product in producto">
+    <h3>{{product.nombreProducto}}</h3>
+    <div class='imagen'>
+        <img ng-src="img/productos/{{product.nombreCategoria}}/{{product.imagen}}" alt="{{product.nombreProducto}}"/>
+    </div>
+    <div class='price'>Precio: <span>{{product.precioUnidad}}</span> €</div>
+    <p>{{product.descripcion }}</p>
+        <span>{{product.stock}} unidad(es) disponible(s)</span>
+        <br/>
+        <button type='button' ng-click='anadirCesta()' style='padding:5pt;margin-top:10pt;' ng-show="product.stock>0">Añadir al carrito</button>
+</div>
