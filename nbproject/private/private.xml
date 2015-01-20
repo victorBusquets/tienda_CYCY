@@ -3,14 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/Store_V2F/public_html/main.html</file>
-            <file>file:/C:/wamp/www/Store_V2F/public_html/index.html</file>
-            <file>file:/C:/wamp/www/Store_V2F/public_html/productos/productos-controller.js</file>
-            <file>file:/C:/wamp/www/Store_V2F/public_html/productos/productos.html</file>
-            <file>file:/C:/wamp/www/Store_V2F/public_html/productos/productos.php</file>
-            <file>file:/C:/wamp/www/Store_V2F/public_html/productos/productos-route.js</file>
-            <file>file:/C:/wamp/www/Store_V2F/public_html/categorias/categorias.html</file>
-            <file>file:/C:/wamp/www/Store_V2F/public_html/detallesProducto/detallesProducto.html</file>
+            <file>file:/C:/wamp/www/Store_V2F/public_html/administracion/index.html</file>
+            <file>file:/C:/wamp/www/Store_V2F/public_html/administracion/scss/estilos.scss</file>
+            <file>file:/C:/wamp/www/Store_V2F/public_html/administracion/articulos/articulos-route.js</file>
         </group>
     </open-files>
 </project-private>

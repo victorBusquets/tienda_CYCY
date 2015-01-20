@@ -25,7 +25,7 @@ function buscar(valor) {
                 resultado = "";
                 for (i = 0; i < jsondata.length; i++) {
                     if (jsondata[i].tipo == "categoria") {
-                        resultado += "<a href='#productos/"+ jsondata[i].id +",0'>";
+                        resultado += "<a href='#productos/"+ jsondata[i].id +"'>";
                         resultado += "<div class='resultado'>";
                         resultado += "<img src='img/categorias/" + jsondata[i].imagen + "'/>";
                         resultado += jsondata[i].nombre + " (" + jsondata[i].tipo + ") </div></a>";
@@ -65,11 +65,14 @@ window.onload = function() {
             categorias += "<a href='#/categorias'><div class='cat'>Ver categorias</div></a>";
             //Cargamos los elementos de la lista
             for (i = 0; i < jsondata.length; i++) {
-                categorias += "<a href='#productos/"+ jsondata[i].idCategoria +",0'><div><span>" + jsondata[i].nombreCategoria + "</span></div></a>";
+                categorias += "<a href='#productos/"+ jsondata[i].idCategoria +"'><div><span>" + jsondata[i].nombreCategoria + "</span></div></a>";
             }
             ;
             //Imprimos el codigo de categorias
             $('.links').html(categorias);
         }
     });
+    
+    sacarDatosSesion();
+    
 };

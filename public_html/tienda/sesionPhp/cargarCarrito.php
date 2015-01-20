@@ -13,14 +13,14 @@ session_start();
 //////////////////////////////////////////////////////////////////     
 if (isset($_SESSION["user"])) {
     $datos=$_SESSION["carrito"];
-    require_once('Services_JSON.php');
+    require_once('../Services_JSON.php');
     $oJson = new Services_JSON();
     echo $oJson->encode($datos);
 } else {
     $_SESSION["user"] = "Invitado";
     $_SESSION["carrito"]=array();
     $datos=$_SESSION["carrito"];
-    require_once('Services_JSON.php');
+    require_once('../Services_JSON.php');
     $oJson = new Services_JSON();
     echo $oJson->encode($datos);
 }

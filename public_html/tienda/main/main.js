@@ -3,7 +3,7 @@ app.controller("MainController", ["$location", "$scope", "$http", function MainC
         $scope.cargarPromocion = function() {
             $http({
                 method: "GET",
-                url: 'promocion.php'
+                url: 'main/promocion.php'
             }).success(function(data, status, headers, config) {
                 $scope.articulosPromocion = data;
             }).error(function(data, status, headers, config) {

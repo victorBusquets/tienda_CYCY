@@ -1,0 +1,44 @@
+<html ng-app="app">
+    <head>
+        <title>Backend de tienda</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        
+        <!--Librerias de Angular -->
+        <script src="../lib/angular/js/angular.js" type="text/javascript"></script>
+        <script src="../lib/angular/js/angular-route.js" type="text/javascript"></script>
+        
+        <!--Variable App -->
+        <script src="main/app.js" type="text/javascript"></script>
+        
+        <!--Controladores -->
+        <script src="main/main.js" type="text/javascript"></script>
+        <script src="pedidos/pedidos.js" type="text/javascript"></script>
+        <script src="clientes/clientes.js" type="text/javascript"></script>
+        <script src="articulos/articulos.js" type="text/javascript"></script>
+        
+        <!--Configuracion de rutas-->
+        <script src="main/main-route.js" type="text/javascript"></script>
+        <script src="pedidos/pedidos-route.js" type="text/javascript"></script>
+        <script src="clientes/clientes-route.js" type="text/javascript"></script>
+        <script src="articulos/articulos-route.js" type="text/javascript"></script>
+        
+    </head>
+    <body>
+        <header>
+            <h1>Panel Administrativo CyCy Store
+                <a ng-href="#/"><img src="img/home.png" alt="home"/></a>
+            </h1>
+
+        </header>
+        <aside>
+            <ul>
+                <li><a ng-href="#/pedidos"><div>Gestión Pedidos</div></a></li>
+                <li><a ng-href="#/articulos"><div>Gestión Artículos</div></a></li>
+                <li><a ng-href="#/clientes"><div>Gestión Clientes</div></a></li>
+            </ul>
+        </aside>
+        <main ng-view></main>
+    </body>
+</html>
