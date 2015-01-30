@@ -1,0 +1,32 @@
+<div ng-show="carrito!=null">
+	<table id="detalleCarrito">
+	<caption>Detalle Carrito</caption>
+		<tr>
+			<th>Nombre</th>
+			<th>Precio Unidad</th>
+			<th>Cantidad</th>
+			<th>Precio Total</th>
+		</tr>
+		<tr ng-repeat="articulo in carrito">
+			<td class="text-tabla">{{articulo.nombreProducto}}</td>
+			<td class="num-tabla">{{articulo.precioUnidad |currency:"€":2}}</td>
+			<td class="num-tabla">{{articulo.unidades}}</td>
+			<td class="num-tabla">{{articulo.precioTotal |currency:"€":2}}</td>
+		</tr>
+		<br/>
+	</table>
+	<br/>
+	<table id="precioTotal">
+		<tr >
+			<td class="tabla-precioTotal">{{precioFinal |currency:"€":2}}</td>
+			<th class="tabla-precioTotal">Importe Final</th>
+		</tr>
+	</table>
+	<div id="realizarCompra">
+		<button>Confirmar Compra</button>
+	</div>
+	<p id="mensajeLoginNecesario"></p>
+</div>
+<div ng-show="carrito==null">
+<p id="sinArticulos">El carrito esta vacio, añada articulos para realizar su compra.</p>
+</div>

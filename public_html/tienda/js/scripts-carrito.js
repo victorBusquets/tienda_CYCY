@@ -119,19 +119,20 @@ function enviarDatosASesion() {
     for (i = 0; i < longitud; i = i + 7) {
         id = contenido[i].id.split("-", 2)[1];
         ruta = contenido[i].getElementsByTagName("img")[0].src;
-        categoria = ruta.split("/", 9)[7];
-        imagen = ruta.split("/", 9)[8];
+		trozos=ruta.split("/");
+        categoria = trozos[trozos.length-2];
+        imagen = trozos[trozos.length-1];
         nombre = contenido[i].getElementsByTagName("p")[0].textContent;
         precioUnidad = contenido[i].getElementsByTagName("p")[1].textContent.split("€", 2)[0];
         unidades = contenido[i].getElementsByTagName("div")[3].getElementsByTagName("span")[0].textContent;
         stock = contenido[i].getElementsByTagName("div")[5].className;
         codigo[numArticulos] = [idProducto = id,
             nombreCategoria = categoria,
-            imagena = imagen,
+            imagen2 = imagen,
             nombreProducto = nombre,
-            precioUnidada = precioUnidad,
-            stocka = stock,
-            unidadesa = unidades];
+            precioUnidad2 = precioUnidad,
+            stock2 = stock,
+            unidades2 = unidades];
         numArticulos++;
     }
     

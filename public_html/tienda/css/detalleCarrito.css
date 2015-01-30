@@ -1,0 +1,86 @@
+#detalleCarrito{
+	width: 98%;
+	background:white;
+	margin-right:2%;
+	border-collapse: collapse;
+}
+
+#detalleCarrito th{
+	border:solid black 1pt;
+	width:24.5%;
+}
+#detalleCarrito td{
+	border:dashed black 1pt;
+	}
+#detalleCarrito td{
+	border-bottom:solid black 1pt;
+	width:24.5%;
+}
+#detalleCarrito td:first-child{
+border-left:solid black 1pt;
+}
+#detalleCarrito td:last-child{
+border-right:solid black 1pt;
+}
+#detalleCarrito .text-tabla{
+text-align:left;
+padding-left:5pt;
+}
+#detalleCarrito .num-tabla{
+text-align:right;
+padding-right:10pt;
+}
+
+#precioTotal{
+	width: 98%;
+	margin-right:2%;
+	border-collapse: collapse;
+}
+
+#precioTotal .tabla-precioTotal{
+float:right;
+padding:0 10pt;
+border:solid black 1pt;
+}
+#precioTotal td:first-child{
+border-left:solid black 0pt;
+	background:white;
+}
+div#realizarCompra {
+text-align:center;
+}
+div#realizarCompra button{
+margin-top:22pt;
+padding:5pt 10pt;
+}
+div#realizarCompra button:hover{
+background:#BDBDBD;
+border-color:#424242;
+}
+p#sinArticulos{
+margin:5pt;
+padding:5pt;
+font-size:16pt;
+}
+#detalleCarrito th,#precioTotal th{
+	color: white;
+	background-color: darkblue;
+}
+#mensajeLoginNecesario{
+	color:#B40404;
+	font-weight:bolder;
+}
+/*Esto debe ir en el css principal*/
+.boton_orden *{
+float:left;
+text-align:left;
+}
+.boton_orden select{
+float:right;
+margin-right:25pt;
+}
+@media all and (max-width: 500pt) {
+.boton_orden select,.boton_orden input,.boton_orden span{
+float:none;
+}
+}

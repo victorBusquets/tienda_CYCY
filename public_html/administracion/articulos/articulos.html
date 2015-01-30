@@ -1,5 +1,40 @@
-<h2>Artículos</h2>
-<table id="tablaArticulos"></table>
-<div id="jqgridpager"></div>
+<h2 class="tituloGestion">Gestión Artículo</h2>
+<table id="list" class="tablaGestion"></table>
+<div id="pager" class="pagerGestion"></div>
+<br/>
+<div class="botones">
+    <button id="nuevo">Nuevo Artículo</button>
+    <button id="borrar">Borrar Artículo</button>
+    <button id="modificar">Modificar Artículo</button>
+</div>
 
+<div id="confirm-dialog">
+    <p id="content-dialog"></p>
+</div>
 
+<div id="dialog-form"> 
+    <form id="form" method="POST" >
+        <label class="col-xs-4">Nombre: </label>
+        <input name="nombre" type="text" class="dato col-xs-8" id="nombre"/>&nbsp;<br/>
+        <label class="col-xs-4">Precio: </label>
+        <input name="precio" type="number" step="any" min="0" class="dato col-xs-8" id="precio"/>&nbsp;<br/>
+        <label class="col-xs-4">Descripcion: </label>
+        <input name="descripcion" type="text" class="dato col-xs-8" id="descripcion"/>&nbsp;<br/>
+        <label class="col-xs-4">Categoria: </label>
+        <select id="categoria" class="dato col-xs-8">
+            <option value="">--- Elige una Categoría ---</option>
+            <option value="1">Accesorios</option>
+            <option value="2">Disfraces</option>
+            <option value="3">Articulos Broma</option>
+            <option value="4">Halloween</option>
+            <option value="5">Maquillaje</option>
+            <option value="6">Aerosoles</option>
+        </select>
+        <br />&nbsp;<br />
+        <label class="col-xs-4">Stock: </label>
+        <input name="stock" type="number" step="any" min="0" class="dato col-xs-8" id="stock"/>&nbsp;<br/>
+        <label class="col-xs-4">Imagen: </label>
+        <input name="image" type="file" class="dato col-xs-8" id="imagen"/><br />
+
+    </form>
+</div>

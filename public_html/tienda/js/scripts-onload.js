@@ -75,4 +75,15 @@ window.onload = function() {
     
     sacarDatosSesion();
     
+	$.ajax({
+			url: 'sesionPhp/verUsuario.php',
+			method: 'get',
+			success: function(datos){
+			usuario=datos.split("//")[1];
+				if(usuario!="Invitado"){
+					$("#boton-login").css("display","none");
+					$("#usuario").text(usuario);
+				};
+			}
+    });
 };

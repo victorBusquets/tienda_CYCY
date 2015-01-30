@@ -1,1 +1,50 @@
-<p>Esto es gestion de clientes</p>
+<h2 class="tituloGestion">Gestión de clientes</h2>
+
+<table id="list" class="tablaGestion"></table>
+<div id="pager" class="pagerGestion"></div>
+
+<br/>
+
+<div class="botones">
+    <button id="nuevo">Nuevo Cliente</button>
+    <button id="editar">Actualizar Cliente</button>
+    <button id="borrar">Borrar Cliente</button>
+</div>
+
+<br/><br/>
+
+
+
+<div id="dialog-form" title="Cliente">
+    <form id="form" method="post">
+        <fieldset>
+            <legend>Insertar Cliente</legend>
+            <label class="id col-xs-4">ID: </label>
+            <input id="id" name="id" type="number" readonly="readonly" class=" id text ui-widget-content ui-corner-all col-xs-8"/>
+            <br class="id"/><br class="id"/>
+            <label class="col-xs-4">Email: </label>
+            <input id="email" name="email" type="text" class=" text ui-widget-content ui-corner-all col-xs-8"/>
+            <br/><br/>
+            <label class="col-xs-4">Contraseña: </label>
+            <input id="contraseña" name="contraseña" type="password" class=" text ui-widget-content ui-corner-all col-xs-8"/>
+            <br/><br/>
+            <label class="col-xs-4">Nombre: </label>
+            <input id="nombre" name="nombre" type="text" class=" text ui-widget-content ui-corner-all col-xs-8"/>
+            <br/><br/>
+            <label class="col-xs-4">Apellidos: </label>
+            <input id="apellido" name="apellido" type="text" class=" text ui-widget-content ui-corner-all col-xs-8"/>
+            <br/><br/>
+            <label class="col-xs-4">DNI: </label>
+            <input id="dni" name="dni" type="text" class=" text ui-widget-content ui-corner-all col-xs-8"/>
+            <br/><br/>
+            <label class="col-xs-4">Teléfono: </label>
+            <input id="telefono" name="telefono" type="tel" class=" text ui-widget-content ui-corner-all col-xs-8"/>
+            <br/><br/><br/>
+        </fieldset>
+    </form>
+</div>
+
+
+<div id="confirm-dialog" title="Error">
+    <p id="content-dialog"></p>
+</div>

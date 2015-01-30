@@ -17,6 +17,7 @@ if (isset($_SESSION["user"])) {
     $oJson = new Services_JSON();
     echo $oJson->encode($datos);
 } else {
+	$_SESSION["idUser"] = -1;
     $_SESSION["user"] = "Invitado";
     $_SESSION["carrito"]=array();
     $datos=$_SESSION["carrito"];

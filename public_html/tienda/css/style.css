@@ -1,10 +1,12 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 @font-face {
   font-family: "Alien";
   src: url("../fonts/alienleague.ttf"); }
 .puntero {
   cursor: pointer; }
-
+#mensaje{
+font-size: 0.8em;
+}
 a {
   text-decoration: none;
   color: inherit; }

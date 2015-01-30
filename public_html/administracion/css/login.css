@@ -1,0 +1,29 @@
+#cuadro-login{
+text-align:center;
+width:300pt;
+background:gray;
+border:solid black 1pt;
+display:none;
+}
+
+#cuadro-login input{
+transition:background 0.5s;
+width:80%;
+margin:8pt 0;
+border:solid black 1pt;
+padding:5pt;
+}
+
+#cuadro-login input:focus{
+background:#CEF6EC;
+}
+
+.no-close .ui-dialog-titlebar-close {
+display: none;
+}
+.no-close .ui-dialog-buttonpane{
+text-align:center;
+}
+.no-close .ui-dialog-buttonpane .ui-dialog-buttonset{
+float:none;
+}
