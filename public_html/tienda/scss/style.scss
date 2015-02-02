@@ -76,7 +76,7 @@ header {
             overflow: hidden;
             li {
                 float: right;
-                font-size: 16;
+                font-size: 16pt;
                 color:$color-letra;
                 a {
                     margin: 20px;
@@ -86,6 +86,11 @@ header {
                         cursor: pointer;
                     }
                 }
+            }
+            li#idiomas{
+                margin-top: -7px;
+                margin-right: 10px;
+                margin-bottom: -10px;
             }
             .empresa{
                 float:left;
@@ -687,8 +692,6 @@ footer {
         }
     }
     /*FIN Responsive Pie de Pagina*/
-
-
 
 }
 /*# sourceMappingURL=style-new.css.map */

@@ -53,7 +53,11 @@
                             <input type="text" onkeyup="buscar(this.value)" 
                             onfocus="buscar(this.value)" placeholder="Buscar">	
                         </div>
-                    </li>		
+                    </li>
+                    <li id="idiomas">
+                        <img class="puntero" ng-show="ingles" ng-click="ingles = false" src="img/lang/esp.png" alt="spanish"/>
+                        <img class="puntero" ng-hide="ingles" ng-click="ingles = true" src="img/lang/ing.png" alt="english"/>
+                    </li>
                 </ul>
             </nav>
             <div id="logbox" style="display: none">

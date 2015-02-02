@@ -1,12 +1,10 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 @font-face {
   font-family: "Alien";
   src: url("../fonts/alienleague.ttf"); }
 .puntero {
   cursor: pointer; }
-#mensaje{
-font-size: 0.8em;
-}
+
 a {
   text-decoration: none;
   color: inherit; }
@@ -39,7 +37,7 @@ header {
       overflow: hidden; }
       header nav ul li {
         float: right;
-        font-size: 16;
+        font-size: 16pt;
         color: #fff; }
         header nav ul li a {
           margin: 20px;
@@ -47,6 +45,10 @@ header {
           header nav ul li a:hover {
             font-weight: bold;
             cursor: pointer; }
+      header nav ul li#idiomas {
+        margin-top: -7px;
+        margin-right: 10px;
+        margin-bottom: -10px; }
       header nav ul .empresa {
         float: left; }
         header nav ul .empresa a {
