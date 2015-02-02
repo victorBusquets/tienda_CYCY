@@ -5,7 +5,7 @@
     </div>
     <div class='price'>Precio: <span>{{product.precioUnidad}}</span> €</div>
     <p>{{product.descripcion }}</p>
-        <span>{{product.stock}} unidad(es) disponible(s)</span>
+    <span>{{product.stock}} <span ng-hide="ingles">unidad(es) disponible(s)</span><span ng-show="ingles">unit(s) available</span></span>
         <br/>
-        <button type='button' ng-click='anadirCesta()' style='padding:5pt;margin-top:10pt;' ng-show="product.stock>0">Añadir al carrito</button>
+        <button type='button' ng-click='anadirCesta()' style='padding:5pt;margin-top:10pt;' ng-show="product.stock>0"><span ng-hide="ingles">Añadir al carrito</span><span ng-show="ingles">Add to cart</span></button>
 </div>

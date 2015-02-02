@@ -405,6 +405,10 @@ footer {
     padding: 3pt;
     padding-right: 6%;
     text-align: right; }
+  footer #moreinfo-footer {
+    margin-top: -30px;
+    margin-left: 25px;
+    float: left; }
 
 /*FIN Pie de Pagina*/
 .artcat {

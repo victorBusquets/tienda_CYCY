@@ -35,7 +35,7 @@
     </div>
 
 </div>
-<div class='sectiontitle'><p>Articulos en promoción</p></div>
+<div class='sectiontitle'><p ng-hide="ingles">Articulos en promoción</p><p ng-show="ingles">Featured items</p></div>
 <div class='section'>
     <div class='article art puntero' ng-repeat="articulo in articulosPromocion">
         <a ng-href="#/detallesProducto/{{articulo.idProducto}}">

@@ -3,5 +3,5 @@ var app = angular.module("app", ['ngRoute']);
 
 
 app.run(function ($rootScope) {
-    $rootScope.ingles = true;
+    $rootScope.ingles = false;
 });
