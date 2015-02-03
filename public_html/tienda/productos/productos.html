@@ -1,22 +1,29 @@
 <div class='sectiontitle'><p>{{nombreCategoria}}</p></div>
 <div class='section'>
     <div class='boton_orden'>
-        <input type="checkbox" ng-model="sinStock"><span>Mostrar solo articulos en stock</span>
-        <select ng-model="indice">
+        <input type="checkbox" ng-model="sinStock"><span ng-hide="ingles">Mostrar solo articulos en stock</span><span ng-show="ingles">Show available items only</span>
+        <select ng-hide="ingles" ng-model="indice">
             <option value="0">Seleccionar orden...</option>
             <option value="1">Ordenar por nombre ascendente</option>
             <option value="2">Ordenar por nombre descendente</option>
             <option value="3">Ordenar por precio ascendente</option>
             <option value="4">Ordenar por precio descendente</option>
         </select>
+        <select ng-show="ingles" ng-model="indice">
+            <option value="0">Select order...</option>
+            <option value="1">Sort by name (ascending)</option>
+            <option value="2">Sort by name (descending)</option>
+            <option value="3">Sort by price (ascending)</option>
+            <option value="4">Sort by price (descending)</option>
+        </select>
     </div>
-    <div class='article art puntero' ng-repeat="producto in productos | orderBy:valoresSelect[indice].valor:valoresSelect[indice].orden" ng-hide="sinStock && producto.stock===0">
+    <div class='article art puntero' ng-repeat="producto in productos| orderBy:valoresSelect[indice].valor:valoresSelect[indice].orden" ng-hide="sinStock && producto.stock === 0">
         <a ng-href="#/detallesProducto/{{producto.idProducto}}">
-        <h3>{{producto.nombreProducto}}</h3>
-        <div class='imagen'><img ng-src="img/productos/{{producto.nombreCategoria}}/{{producto.imagen}}" alt="{{producto.nombreProducto}}"/></div>
-        <div class='description' title="{{producto.descripcion}}">{{producto.descripcion}}</div>
-        <div class='price'>Precio: <span>{{producto.precioUnidad |number:2}}</span> €</div>
-        <div class='stock'>Stock <span>{{producto.stock}}</span> unds</div>
+            <h3>{{producto.nombreProducto}}</h3>
+            <div class='imagen'><img ng-src="img/productos/{{producto.nombreCategoria}}/{{producto.imagen}}" alt="{{producto.nombreProducto}}"/></div>
+            <div class='description' title="{{producto.descripcion}}">{{producto.descripcion}}</div>
+            <div class='price'><span ng-hide="ingles">Precio</span><span ng-show="ingles">Price</span>: <span>{{producto.precioUnidad|number:2}}</span> €</div>
+            <div class='stock'>Stock: <span>{{producto.stock}}</span> <span ng-hide="ingles">uds</span><span ng-show="ingles">units</span></div>
         </a>
     </div>
 </div>

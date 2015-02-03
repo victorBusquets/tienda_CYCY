@@ -1,11 +1,11 @@
 <div ng-show="carrito!=null">
 	<table id="detalleCarrito">
-	<caption>Detalle Carrito</caption>
+            <caption><span ng-hide="ingles">Detalle Carrito</span><span ng-show="ingles">Cart Detail</span></caption>
 		<tr>
-			<th>Nombre</th>
-			<th>Precio Unidad</th>
-			<th>Cantidad</th>
-			<th>Precio Total</th>
+                    <th><span ng-hide="ingles">Nombre</span><span ng-show="ingles">Name</span></th>
+                    <th><span ng-hide="ingles">Precio Unidad</span><span ng-show="ingles">Unit Price</span></th>
+                    <th><span ng-hide="ingles">Cantidad</span><span ng-show="ingles">Quantity</span></th>
+                    <th><span ng-hide="ingles">Precio Total</span><span ng-show="ingles">Total Price</span></th>
 		</tr>
 		<tr ng-repeat="articulo in carrito">
 			<td class="text-tabla">{{articulo.nombreProducto}}</td>
@@ -19,14 +19,17 @@
 	<table id="precioTotal">
 		<tr >
 			<td class="tabla-precioTotal">{{precioFinal |currency:"€":2}}</td>
-			<th class="tabla-precioTotal">Importe Final</th>
+                        <th class="tabla-precioTotal"><span ng-hide="ingles">Importe Final</span><span ng-show="ingles">Final Price</span></th>
 		</tr>
 	</table>
 	<div id="realizarCompra">
-		<button>Confirmar Compra</button>
+            <button><span ng-hide="ingles">Confirmar Compra</span><span ng-show="ingles">Purchase</span></button>
 	</div>
 	<p id="mensajeLoginNecesario"></p>
 </div>
 <div ng-show="carrito==null">
-<p id="sinArticulos">El carrito esta vacio, añada articulos para realizar su compra.</p>
+<p id="sinArticulos">
+    <span ng-hide="ingles">El carrito esta vacio, añada artículos para realizar su compra.</span>
+    <span ng-show="ingles">The cart is empty. Please add an item to purchase.</span>
+</p>
 </div>

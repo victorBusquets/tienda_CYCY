@@ -510,6 +510,27 @@ footer {
       padding: 5pt; }
 
   /*FIN Responsive Pie de Pagina*/ }
+div.aboutus {
+  width: 40%;
+  float: left; }
+
+div.cymedia {
+  max-width: 50%;
+  float: left;
+  margin: 50pt 10pt 10pt 30pt; }
+  div.cymedia video {
+    width: 100%; }
+  div.cymedia div.gmap {
+    width: 100%;
+    overflow: hidden; }
+
+#gmap_canvas {
+  height: 350px;
+  width: 100%; }
+  #gmap_canvas img {
+    max-width: none !important;
+    background: none !important; }
+
 /*# sourceMappingURL=style-new.css.map */
 
 /*# sourceMappingURL=style.css.map */

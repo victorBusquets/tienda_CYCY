@@ -697,6 +697,33 @@ footer {
         }
     }
     /*FIN Responsive Pie de Pagina*/
-
 }
+
+div.aboutus{
+    width: 40%;
+    float: left;
+}
+
+div.cymedia{
+    max-width: 50%;
+    float: left;
+    margin: 50pt 10pt 10pt 30pt;
+    video{
+        width: 100%;
+    }
+    div.gmap{
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+
+#gmap_canvas{
+    height:350px; 
+    width: 100%;
+    img{
+        max-width:none!important;background:none!important
+    }  
+} 
+
 /*# sourceMappingURL=style-new.css.map */

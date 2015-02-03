@@ -3,7 +3,7 @@
     <div class='imagen'>
         <img ng-src="img/productos/{{product.nombreCategoria}}/{{product.imagen}}" alt="{{product.nombreProducto}}"/>
     </div>
-    <div class='price'>Precio: <span>{{product.precioUnidad}}</span> €</div>
+    <div class='price'><span ng-hide="ingles">Precio</span><span ng-show="ingles">Price</span>: <span>{{product.precioUnidad}}</span> €</div>
     <p>{{product.descripcion }}</p>
     <span>{{product.stock}} <span ng-hide="ingles">unidad(es) disponible(s)</span><span ng-show="ingles">unit(s) available</span></span>
         <br/>
