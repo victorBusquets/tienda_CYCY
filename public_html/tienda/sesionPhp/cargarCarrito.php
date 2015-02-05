@@ -25,4 +25,3 @@ if (isset($_SESSION["user"])) {
     $oJson = new Services_JSON();
     echo $oJson->encode($datos);
 }
-?>

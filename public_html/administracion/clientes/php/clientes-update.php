@@ -10,14 +10,14 @@ if (mysqli_connect_errno()) {
 
 $id = $_POST["id"];
 $email = $_POST["email"];
-$contraseña = $_POST["contraseña"];
+$contrasenya = $_POST["contrasenya"];
 $nombre = $_POST["nombre"];
 $apellido = $_POST["apellido"];
 $dni = $_POST["dni"];
 $telefono = $_POST["telefono"];
 
 
-$query = "UPDATE cliente SET email = '$email', contraseña = '$contraseña', nombre = '$nombre', apellido = '$apellido', dni = '$dni', telefono = '$telefono' WHERE idCliente = $id";
+$query = "UPDATE cliente SET email = '$email', contrasenya = '$contrasenya', nombre = '$nombre', apellido = '$apellido', dni = '$dni', telefono = '$telefono' WHERE idCliente = $id";
 
 echo $query;
 echo mysqli_query($connection, $query);

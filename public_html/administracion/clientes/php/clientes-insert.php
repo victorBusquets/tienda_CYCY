@@ -9,14 +9,14 @@ if (mysqli_connect_errno()) {
 }
 
 $email = $_POST["email"];
-$contraseña = $_POST["contraseña"];
+$contrasenya = $_POST["contrasenya"];
 $nombre = $_POST["nombre"];
 $apellido = $_POST["apellido"];
 $dni = $_POST["dni"];
 $telefono = $_POST["telefono"];
 
 
-$query = "INSERT INTO cliente VALUES (null, '$email', '$contraseña', '$nombre', '$apellido', '$dni', '$telefono')";
+$query = "INSERT INTO cliente VALUES (null, '$email', '$contrasenya', '$nombre', '$apellido', '$dni', '$telefono')";
 
 mysqli_query($connection, $query);
 

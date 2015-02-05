@@ -1,4 +1,4 @@
-app.controller("DetalleCarritoController", ["$location", "$scope", "$http", "$routeParams", function MainController($location, $scope, $http, $routeParams) {
+app.controller("NosotrosController", function MainController() {
 
         var myOptions = {
             zoom: 17,
@@ -14,4 +14,4 @@ app.controller("DetalleCarritoController", ["$location", "$scope", "$http", "$ro
         });
         infowindow.open(map, marker);
 
-    }]);
+    });
