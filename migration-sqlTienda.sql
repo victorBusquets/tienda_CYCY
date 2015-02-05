@@ -7,7 +7,9 @@ CREATE TABLE IF NOT EXISTS `administrador` (
   PRIMARY KEY (`idAdministrador`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
+//Contraseñas visibles puesto que es un proyecto de prueba 
 INSERT INTO `administrador` (`idAdministrador`, `correo`, `contrasenya`) VALUES
+
 (1, 'juanpe@gmail.com', 'juanpe'),
 (2, 'victor@gmail.com', 'victor');
 
@@ -181,9 +183,7 @@ INSERT INTO `producto` (`idProducto`, `nombreProducto`, `descripcion`, `precioUn
 (41, 'Careta payaso', 'Pontela por la noche y obtendras resultados increibles', '23.00', 'careta_payaso.jpg', 4, 3),
 (42, 'Careta gorila', 'Pontela y.. uhh uh ih ahh uhhhhh', '17.00', 'careta_gorila.jpg', 4, 12),
 (43, 'Bombas fetidas 5unds', 'Rompelas y ufff como huele', '1.75', 'bombas_fetidas.jpg', 3, 6),
-(44, 'Retira billete', 'Diviertase con o de sus amigos', '1.25', 'retira_billetes.jpg', 3, 9),
-(53, 'ihhjbbj', 'hhbhjklk', '66.00', 'null', 1, 9),
-(54, 'patata', 'oifajsdoifj', '12.50', '', 2, 54648);
+(44, 'Retira billete', 'Diviertase con o de sus amigos', '1.25', 'retira_billetes.jpg', 3, 9);
 
 CREATE TABLE IF NOT EXISTS `promocion` (
   `producto` int(11) NOT NULL,
