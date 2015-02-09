@@ -7,9 +7,7 @@ CREATE TABLE IF NOT EXISTS `administrador` (
   PRIMARY KEY (`idAdministrador`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
-//Contraseñas visibles puesto que es un proyecto de prueba 
 INSERT INTO `administrador` (`idAdministrador`, `correo`, `contrasenya`) VALUES
-
 (1, 'juanpe@gmail.com', 'juanpe'),
 (2, 'victor@gmail.com', 'victor');
 
@@ -183,7 +181,9 @@ INSERT INTO `producto` (`idProducto`, `nombreProducto`, `descripcion`, `precioUn
 (41, 'Careta payaso', 'Pontela por la noche y obtendras resultados increibles', '23.00', 'careta_payaso.jpg', 4, 3),
 (42, 'Careta gorila', 'Pontela y.. uhh uh ih ahh uhhhhh', '17.00', 'careta_gorila.jpg', 4, 12),
 (43, 'Bombas fetidas 5unds', 'Rompelas y ufff como huele', '1.75', 'bombas_fetidas.jpg', 3, 6),
-(44, 'Retira billete', 'Diviertase con o de sus amigos', '1.25', 'retira_billetes.jpg', 3, 9);
+(44, 'Retira billete', 'Diviertase con o de sus amigos', '1.25', 'retira_billetes.jpg', 3, 9),
+(53, 'ihhjbbj', 'hhbhjklk', '66.00', 'null', 1, 9),
+(54, 'patata', 'oifajsdoifj', '12.50', '', 2, 54648);
 
 CREATE TABLE IF NOT EXISTS `promocion` (
   `producto` int(11) NOT NULL,
@@ -204,3 +204,17 @@ ALTER TABLE `producto`
 
 ALTER TABLE `promocion`
   ADD CONSTRAINT `FK_promocion_producto` FOREIGN KEY (`producto`) REFERENCES `producto` (`idProducto`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ CREATE TABLE IF NOT EXISTS `clientependiente` (
+  `idCliente` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(30) NOT NULL,
+  `contrasenya` varchar(50) NOT NULL,
+  `nombre` varchar(35) NOT NULL,
+  `apellido` varchar(60) NOT NULL,
+  `dni` varchar(10) NOT NULL,
+  `telefono` int(13) DEFAULT NULL,
+  `num_confirmacion` int(6) NOT NULL,
+  PRIMARY KEY (`idCliente`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `dni` (`dni`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
