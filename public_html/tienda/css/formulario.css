@@ -1,0 +1,54 @@
+#form-registro{
+background: rgba(247, 250, 250,0.8);
+padding: 10pt;
+margin-right: 40pt;
+padding-top: 20pt;
+min-height: 400pt;
+margin-bottom: 0pt;
+z-index: 2;
+}
+#form-registro h2{
+text-align: center;
+}
+#form-registro .campo-form-registro{
+display: block;
+max-width: 320pt;
+margin: 12pt 0 18pt 40pt;
+}
+#form-registro input{
+    float:right;
+    padding: 2pt;
+    width: 175pt;
+    transition: border 0.5s;
+    text-align: center;
+}
+#form-registro span{
+    color:#02025a;
+        padding: 2pt;
+}
+
+#form-registro fieldset{
+background:#E0E6F8;
+margin: 0 40pt 20pt 20pt;
+}
+#form-registro fieldset legend{
+    text-align: center;
+}
+
+#form-registro input:focus{
+    border: solid blueviolet 1pt;
+}
+#form-registro button{
+    margin-left: 35%;
+    width: 30%;
+}
+#form-registro .msg{
+    color: red;
+    text-align: center;
+}
+#form-registro button{
+    padding: 5pt;
+}
+#form .registrado{
+    text-align: center;
+}

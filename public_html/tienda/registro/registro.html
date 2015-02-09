@@ -1,0 +1,42 @@
+<form id="form">
+<div id="form-registro">
+    <h2>FORMULARIO REGISTRO DE NUEVOS CLIENTES:</h2>
+    <fieldset>
+        <legend>DATOS PERSONALES:</legend>
+	<div class="campo-form-registro">
+		<span>NOMBRE (*)</span>
+		<input placeholder="Pepito" type="text" name="nombre" maxlength="35" ng-model="datos.nombre"/>
+	</div>
+	<div class="campo-form-registro">
+		<span>APELLIDOS (*)</span>
+                <input placeholder="Garcia Torres" type="text" name="apellidos" maxlength="60" ng-model="datos.apellidos"/>
+	</div>
+	<div class="campo-form-registro">
+		<span>TELEFONO</span>
+		<input placeholder="666666666" type="text" name="telefono" maxlength="13" ng-model="datos.telefono"/>
+	</div>
+	<div class="campo-form-registro">
+		<span>DNI (*)</span>
+		<input placeholder="11111111X" type="text" name="dni" maxlength="9" ng-model="datos.dni"/>
+	</div>
+        <p class="msg" id="msg-1"></p>
+    </fieldset>
+    <fieldset>
+        <legend>DATOS INICIO SESIÓN:</legend>
+	<div class="campo-form-registro">
+		<span>EMAIL (*)</span>
+		<input placeholder="tu_correo@ejemplo.com" type="text" name="email" ng-model="datos.email"/>
+	</div>
+	<div class="campo-form-registro">
+		<span>CONTRASEÑA (*)</span>
+		<input placeholder="********" type="password" name="pass" ng-model="datos.pass"/>
+	</div>
+	<div class="campo-form-registro">
+		<span>REPETIR CONTRASEÑA (*)</span>
+                <input placeholder="********" type="password" name="repetirPass" ng-model="datos.repetirPass"/>
+	</div>
+        <p class="msg" id="msg-2"></p>
+    </fieldset>
+    <button type="button" ng-click="registrar()">Registrarse</button>
+</div>
+</form>
