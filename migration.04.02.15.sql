@@ -1,4 +1,4 @@
-CREATE DATABASE `tienda`;tienda
+CREATE DATABASE `tienda`;
 USE `tienda`;
 CREATE TABLE IF NOT EXISTS `administrador` (
   `idAdministrador` int(11) NOT NULL AUTO_INCREMENT,
