@@ -1,5 +1,5 @@
 app.controller("RegistroController", [ "$scope", "$http", function RegistroController($scope, $http) {
-         $scope.datos = {
+        $scope.datos = {
             apellidos: "",
             nombre: "",
             telefono: "",
@@ -8,6 +8,7 @@ app.controller("RegistroController", [ "$scope", "$http", function RegistroContr
             pass: "",
             repetirPass: ""
         };
+        
         $scope.registrar = function() {
         //Vaciamos las variables y los mensajes
         msg1="";
@@ -40,6 +41,7 @@ app.controller("RegistroController", [ "$scope", "$http", function RegistroContr
 	$scope.enviarDatos = function() {
 			$.ajax({
             method: "POST",
+            datatype: "json",
             url: "registro/registro.php",
             data: $("#form").serialize(),
             success: function (data) {

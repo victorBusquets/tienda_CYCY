@@ -1,6 +1,6 @@
 app.config(['$routeProvider', function($routeProvider) {
 
-        $routeProvider.when('/quienessomos', {
+        $routeProvider.when('/info', {
             templateUrl: "nosotros/nosotros.html",
             controller: "NosotrosController"
         });
