@@ -218,3 +218,11 @@ ALTER TABLE `promocion`
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `dni` (`dni`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `cuenta` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cliente` int(11) DEFAULT NULL,
+  `cuenta` varchar(20) DEFAULT NULL,
+  `uso` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
