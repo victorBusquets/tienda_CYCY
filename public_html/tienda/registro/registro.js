@@ -25,17 +25,30 @@ app.controller("RegistroController", [ "$scope", "$http", function RegistroContr
         }
         if($scope.datos.pass!==$scope.datos.repetirPass){
            msg2+="-Las contraseñas deben coincidir<br/>";
-        }
+        }else{
+			if(($scope.datos.pass!=="")&&($scope.datos.repetirPass!=="")&&($scope.datos.pass.length<8)){
+				msg2+="-La contraseña debe tener minimo 8 digitos<br/>";
+			}
+		}
         if(($scope.datos.email!=="")&&(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test($scope.datos.email))){
             msg2+="-Introduzca un email valido<br/>";
         }
-        //Asignamos los mensajes
-        $('#msg-1').html(msg1);
-        $('#msg-2').html(msg2);
-        
-        if(msg1===""&&msg2===""){
-           $scope.enviarDatos();
-        }
+		//Comprobamossi el email esta registrado en cuentas activas o pendientes
+		$.ajax({
+            method: "GET",
+            url: "registro/comprobarEmailDisponible.php?email="+$scope.datos.email,
+            success: function (data) {
+				msg2+=data;
+
+				//Asignamos los mensajes
+				$('#msg-1').html(msg1);
+				$('#msg-2').html(msg2);
+				
+				if(msg1===""&&msg2===""){
+				   $scope.enviarDatos();
+				}
+		  }
+		})
 		
     };
 	$scope.enviarDatos = function() {
@@ -45,8 +58,7 @@ app.controller("RegistroController", [ "$scope", "$http", function RegistroContr
             url: "registro/registro.php",
             data: $("#form").serialize(),
             success: function (data) {
-				alert("Usuario "+data.nombre+" registrado.")
-				$('#form').html("<p>Usuarioa</p>");
+				$('#form').html("<p>Usuario="+data.nombre+"</p><p>Ruta de confirmación:</p><a href='#/confirmarRegistro/"+data.id+"/"+data.num+"'>Haga click para confirmar su registro</a>");
             }
         });
 	};

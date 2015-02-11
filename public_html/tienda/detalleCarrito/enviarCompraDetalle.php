@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../conexion.php');
+require_once('../../commons/php/conexion.php');
 $datos=$_POST["datos"];
 $datos=json_decode($datos);
 mysql_connect(host(),usuario(),contrasenya()) or die("Conection Error: " . mysql_error);

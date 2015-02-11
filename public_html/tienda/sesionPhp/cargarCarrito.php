@@ -11,9 +11,10 @@ session_start();
 //              $_SESSION["carrito"][0][0];                     //
 //          ya que los puntos en php son concatenacion          //
 //////////////////////////////////////////////////////////////////     
+require_once('../../commons/php/Services_JSON.php');
+
 if (isset($_SESSION["user"])) {
     $datos=$_SESSION["carrito"];
-    require_once('../Services_JSON.php');
     $oJson = new Services_JSON();
     echo $oJson->encode($datos);
 } else {
@@ -21,7 +22,6 @@ if (isset($_SESSION["user"])) {
     $_SESSION["user"] = "Invitado";
     $_SESSION["carrito"]=array();
     $datos=$_SESSION["carrito"];
-    require_once('../Services_JSON.php');
     $oJson = new Services_JSON();
     echo $oJson->encode($datos);
 }

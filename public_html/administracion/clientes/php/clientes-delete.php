@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../conexion.php');
+require_once('../../../commons/php/conexion.php');
 
 $connection = mysqli_connect(host(), usuario(), contrasenya(), "tienda") or die("Connection Error: " . mysql_error());
 

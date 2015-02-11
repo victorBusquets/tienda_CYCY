@@ -213,7 +213,7 @@ ALTER TABLE `promocion`
   `apellido` varchar(60) NOT NULL,
   `dni` varchar(10) NOT NULL,
   `telefono` int(13) DEFAULT NULL,
-  `num_confirmacion` int(6) NOT NULL,
+  `num_confirmacion` int(9) NOT NULL,
   PRIMARY KEY (`idCliente`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `dni` (`dni`)

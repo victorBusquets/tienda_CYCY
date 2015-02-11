@@ -1,6 +1,6 @@
 <?php
 session_start();
-	require_once('../conexion.php');
+	require_once('../../commons/php/conexion.php');
 	mysql_connect(host(),usuario(),contrasenya()) or die("Conection Error: " . mysql_error);
 	mysql_select_db ("tienda") or die("Error connecting to db(" . mysql_error .")");
 	$SQL="SELECT *,(SELECT nombreCategoria FROM `categoria` WHERE idCategoria = categoria)as nombreCategoria "
@@ -22,7 +22,7 @@ session_start();
 		$contador++;
 	};
 	//echo json_encode($datos);
-	require_once('../Services_JSON.php');
+require_once('../../commons/php/Services_JSON.php');
         $oJson = new Services_JSON();
         echo $oJson->encode($datos);
 ?>

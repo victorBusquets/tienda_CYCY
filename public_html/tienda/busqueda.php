@@ -1,6 +1,6 @@
 <?php
 session_start();
-	require_once('conexion.php');
+	require_once('../commons/php/conexion.php');
 	mysql_connect(host(),usuario(),contrasenya()) or die("Conection Error: " . mysql_error);
 	mysql_select_db ("tienda") or die("Error connecting to db(" . mysql_error .")");
 	
@@ -26,7 +26,7 @@ session_start();
 		$contador++;
 	};
 
-        require_once('Services_JSON.php');
+require_once('../commons/php/Services_JSON.php');
         $oJson = new Services_JSON();
         echo $oJson->encode($datos);
 ?>

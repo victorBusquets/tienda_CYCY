@@ -7,8 +7,8 @@ if($_POST["telefono"]==""){
 }
 
 
- $num_confirmacion=rand(100,999).rand(100,999);
-require_once('../conexion.php');
+ $num_confirmacion=rand(100,999).rand(100,999).rand(100,999);
+require_once('../../commons/php/conexion.php');
 mysql_connect(host(), usuario(), contrasenya()) or die("Conection Error: " . mysql_error);
 mysql_select_db("tienda") or die("Error connecting to db(" . mysql_error . ")");
 $SQL = "INSERT INTO clientependiente (email, contrasenya, nombre, apellido, dni, telefono, num_confirmacion) "

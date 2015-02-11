@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION["email"])){
-require_once('../../conexion.php');
+require_once('../../../commons/php/conexion.php');
 $page = $_GET['page']; // get the requested page
 $limit = $_GET['rows']; // get how many rows we want to have into the grid
 $sidx = $_GET['sidx']; // get index row - i.e. user click to sort

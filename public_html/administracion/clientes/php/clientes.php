@@ -10,7 +10,7 @@ if (!$sidx) {
     $sidx = 1;
 }
 
-require_once('../../conexion.php');
+require_once('../../../commons/php/conexion.php');
 // Connect to database
 mysql_connect(host(), usuario(), contrasenya())
         or die("Connection Error: " . mysql_error());

@@ -1,5 +1,5 @@
 <?php
-require_once '../../conexion.php';
+require_once('../../../commons/php/conexion.php');
 
 $idProducto = $_POST['idProducto'];
 $nombreProducto = $_POST['nombreProducto'];
