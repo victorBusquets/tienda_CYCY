@@ -1,4 +1,4 @@
-app.controller("RegistroController", [ "$scope", "$http", function RegistroController($scope, $http) {
+﻿app.controller("RegistroController", [ "$scope", "$http", function RegistroController($scope, $http) {
         $scope.datos = {
             apellidos: "",
             nombre: "",
@@ -58,7 +58,7 @@ app.controller("RegistroController", [ "$scope", "$http", function RegistroContr
             url: "registro/registro.php",
             data: $("#form").serialize(),
             success: function (data) {
-				$('#form').html("<p>Usuario="+data.nombre+"</p><p>Ruta de confirmación:</p><a href='#/confirmarRegistro/"+data.id+"/"+data.num+"'>Haga click para confirmar su registro</a>");
+				$('#form').html("<p>Usuario="+data.nombre+"</p><p>Ruta de confirmación:</p><a class='enlace' href='#/confirmarRegistro/"+data.id+"/"+data.num+"'>Haga click para confirmar su registro</a>");
             }
         });
 	};

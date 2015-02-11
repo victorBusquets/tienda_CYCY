@@ -10,6 +10,6 @@ function usuario() {
 }
 
 function contrasenya() {
-    $valor = "root";
+    $valor = "";
     return $valor;
 }
