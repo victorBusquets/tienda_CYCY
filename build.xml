@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="tienda_Cycy" default="default" basedir=".">
-    <description>Builds, tests, and runs the project tienda_Cycy.</description>
-    
-    <taskdef resource="es/logongas/openshift/ant/antlib.xml" />
+<project name="tienda_Cycy" default="desplegar" basedir=".">
     
     <target name="desplegar">
-		<property name="libs.CopyLibs.classpath" value="ant/lib/org-netbeans-modules-java-j2seproject-copylibstask.jar" />
-        <property name="j2ee.server.home" value="ant" />
-		
-	<!--
--Descargamos  el proyecto de GITHUB.	//Cosa de jenkins
--Ejecutamos el target del build.xml			//Cosa de jenkins
--Borramos la carpeta php.
--Vaciamos la carpeta php/ menos .git/.
--Copiamos todo el contenido de tienda_CYCY/public_html en php/.
--Cambiamos el 'conexion.php' por 'conexion-sinUso.php'.
--Hacemos git add *.
--Hacemos git commit -am “Despliegue automatico con Jenkins”.
--Hacemos git push.
-	-->
+		<taskdef resource="es/logongas/openshift/ant/antlib.xml" />
 		<delete dir="../php"/>
 			
 		<gitcloneapplication
