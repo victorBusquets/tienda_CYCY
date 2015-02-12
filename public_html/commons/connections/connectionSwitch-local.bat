@@ -1,4 +1,3 @@
-set sourcedir=C:\wamp\www\CyCyStore\public_html\
+set sourcedir=C:\wamp\www\CyCyStore\public_html\commons\
 
-cp %sourcedir%commons\connections\localConnection.php %sourcedir%tienda\conexion.php
-cp %sourcedir%commons\connections\localConnection.php %sourcedir%administracion\conexion.php
+cp %sourcedir%connections\localConnection.php %sourcedir%php\conexion.php
