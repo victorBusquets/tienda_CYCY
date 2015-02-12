@@ -6,49 +6,49 @@
 
         <!-- Librerias JQuery -->
         <script src="../lib/jquery/jquery-1.11.1.js" type="text/javascript"></script>
-        
+
         <!-- Librerias JQuery UI -->
         <script src="../lib/jquery/jquery-ui.js" type="text/javascript"></script>
-        
+
         <!-- Hoja de Estilos JQuery UI -->
         <link href="../lib/jquery/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
-        
+
         <!-- Librerias JQGrid -->
         <script src="../lib/jqgrid/js/jquery.jqGrid.min.js" type="text/javascript"></script>
-        
+
         <!-- Libreria Idioma JQGrid -->
         <script src="../lib/jqgrid/src/i18n/grid.locale-es.js" type="text/javascript"></script>
-        
+
         <!-- Hoja de Estilos JQGrid -->
         <link href="../lib/jqgrid/css/ui.jqgrid.css" rel="stylesheet" type="text/css"/>
-        		
+
         <!--Librerias de Angular -->
         <script src="../lib/angular/js/angular.js" type="text/javascript"></script>
         <script src="../lib/angular/js/angular-route.js" type="text/javascript"></script>
-        
+
         <!--Variable App -->
         <script src="main/app.js" type="text/javascript"></script>
-        
+
         <!--Controladores -->
         <script src="main/main.js" type="text/javascript"></script>
         <script src="pedidos/pedidos.js" type="text/javascript"></script>
         <script src="clientes/clientes.js" type="text/javascript"></script>
         <script src="articulos/articulos.js" type="text/javascript"></script>
-        
+
         <!--Configuracion de rutas-->
         <script src="main/main-route.js" type="text/javascript"></script>
         <script src="pedidos/pedidos-route.js" type="text/javascript"></script>
         <script src="clientes/clientes-route.js" type="text/javascript"></script>
         <script src="articulos/articulos-route.js" type="text/javascript"></script>
-        
-		<!--Script login-->
+
+        <!--Script login-->
        	<script src="js/login.js" type="text/javascript"></script>
-		
-		<!--Hojas de estilos propias-->
-		<link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-		<link href="css/estilos.css" rel="stylesheet" type="text/css"/>
-   		<link href="css/login.css" rel="stylesheet" type="text/css"/>
-		
+
+        <!--Hojas de estilos propias-->
+        <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="css/login.css" rel="stylesheet" type="text/css"/>
+
     </head>
     <body>
         <header>
@@ -62,14 +62,15 @@
                 <li><a ng-href="#/pedidos"><div>Gestión Pedidos</div></a></li>
                 <li><a ng-href="#/articulos"><div>Gestión Artículos</div></a></li>
                 <li><a ng-href="#/clientes"><div>Gestión Clientes</div></a></li>
+                <li><a href="pdf-pedidos/lista-pedidos.php" target="_blank"><div>PDF Pedidos</div></a></li>
             </ul>
         </aside>
         <main ng-view></main>
-		<div id="cuadro-login" title="Iniciar Sesión">
-		<input type="text" placeholder="Email..." id="email"/>
-		<input type="password" placeholder="Contraseña..." id="password"/>
-		<div id="mensaje-login">
-	</div>
-</div>
+        <div id="cuadro-login" title="Iniciar Sesión">
+            <input type="text" placeholder="Email..." id="email"/>
+            <input type="password" placeholder="Contraseña..." id="password"/>
+            <div id="mensaje-login">
+            </div>
+        </div>
     </body>
 </html>
