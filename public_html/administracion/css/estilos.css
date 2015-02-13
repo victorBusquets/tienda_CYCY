@@ -1,14 +1,12 @@
 body {
   margin: 0; }
-  
 
 header {
   width: 100%;
   background: gray; }
   header h1 {
     text-align: center;
-    padding: 10pt; 
-	margin-top:0;}
+    padding: 10pt; }
   header img {
     width: 30pt;
     height: 30pt;
@@ -36,6 +34,8 @@ aside {
       aside ul div:hover {
         background: #3985b9;
         color: white; }
+    aside ul div.goto-pdf {
+      background-color: #8c84c4; }
 
 main {
   width: 80%;
@@ -47,7 +47,7 @@ h2.tituloGestion {
   font-family: "Trebuchet MS,Tahoma,Verdana,Arial,sans-serif";
   font-weight: bold; }
 
-#gbox_list,#gbox_list_d, .botones {
+#gbox_list, .botones {
   margin: auto;
   text-align: center; }
 
