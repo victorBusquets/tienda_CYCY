@@ -5,12 +5,12 @@ function host() {
 }
 
 function usuario() {
-    $valor = "";
+    $valor = "admincveTVRD";
     return $valor;
 }
 
 function contrasenya() {
-    $valor = "";
+    $valor = "Q3XJI3tMdz_y";
     return $valor;
 }
 ?>

@@ -5,7 +5,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 require_once('../../lib/fpdf/fpdf.php');
 require_once('../../commons/php/conexion.php');
-
+define('EURO'," " . chr(128));
 
 $conexion = mysqli_connect(host(), usuario(), contrasenya(), 'tienda');
 $query = "SELECT MAX(numPedido) FROM detallepedido";
@@ -71,9 +71,9 @@ $fill = false;
 $preciototal = 0.0;
 foreach ($data as $row) {
     $pdf->Cell($w[0], 6, $row[0], 'LR', 0, 'L', $fill);
-    $pdf->Cell($w[1], 6, $row[1] . "e", 'LR', 0, 'R', $fill);
+    $pdf->Cell($w[1], 6, $row[1] . EURO, 'LR', 0, 'R', $fill);
     $pdf->Cell($w[2], 6, number_format($row[2]), 'LR', 0, 'R', $fill);
-    $pdf->Cell($w[3], 6, $row[3] . "e", 'LR', 0, 'R', $fill);
+    $pdf->Cell($w[3], 6, $row[3] . EURO, 'LR', 0, 'R', $fill);
     $pdf->Ln();
     $fill = !$fill;
     $preciototal = $preciototal + doubleval($row[3]);
@@ -81,6 +81,6 @@ foreach ($data as $row) {
 // Línea de cierre
 $pdf->Cell(array_sum($w), 0, '', 'T');
 $pdf->Ln(5);
-$pdf->Cell(80, 10, " TOTAL: " . $preciototal . "e", 1);
+$pdf->Cell(80, 10, " TOTAL: " . $preciototal . EURO, 1);
 
 $pdf->Output();
