@@ -31,7 +31,6 @@ while ($row = mysqli_fetch_array($articulos, MYSQL_ASSOC)) {
 }
 
 
-
 $pdf = new FPDF();
 
 $pdf->AddPage();
