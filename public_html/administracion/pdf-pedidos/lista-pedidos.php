@@ -5,7 +5,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 require_once('../../lib/fpdf/fpdf.php');
 require_once('../../commons/php/conexion.php');
-
+define('EURO', " " . chr(128));
 
 $conexion = mysqli_connect(host(), usuario(), contrasenya(), 'tienda');
 
@@ -24,7 +24,6 @@ $pdf->Cell(180, 40, "CyCy Store", 0, 1);
 $pdf->SetFillColor(224, 235, 255);
 
 $header = array('Articulo', 'Precio/ud', 'Cantidad', 'Precio Total');
-// Carga de datos
 $w = array(60, 35, 35, 40);
 
 
@@ -47,34 +46,32 @@ while ($row = mysqli_fetch_array($pedidos, MYSQL_ASSOC)) {
     $fill = false;
     $preciototal = 0.0;
     $pdf->Ln(15);
-    
-    $pdf->SetTextColor(0);
-    $pdf->SetFont('');
+
+    $pdf->SetTextColor(255);
+    $pdf->SetFont('', 'B');
+    $pdf->SetFillColor(124, 135, 175);
     //cabecera tabla detalles
     for ($i = 0; $i < count($header); $i++) {
         $pdf->Cell($w[$i], 7, $header[$i], 1, 0, 'C', true);
     }
+    $pdf->SetFont('', '');
+    $pdf->SetFillColor(224, 235, 255);
+    $pdf->SetTextColor(0);
     while ($rowd = mysqli_fetch_array($detalle, MYSQL_ASSOC)) {
-        
+
+        $query = "SELECT nombreProducto FROM producto WHERE idProducto = " . $rowd['producto'];
+        $result = mysqli_query($conexion, $query) or die("Couldn t execute query." . mysql_error());
+        $articulo = mysqli_fetch_array($result)[0];
+
         $pdf->Ln();
-        $pdf->Cell($w[0], 6, $rowd['producto'], 'LR', 0, 'L', $fill);
-        $pdf->Cell($w[1], 6, $rowd['precioUnidad'] . "e", 'LR', 0, 'R', $fill);
+        $pdf->Cell($w[0], 6, $articulo, 'LR', 0, 'L', $fill);
+        $pdf->Cell($w[1], 6, $rowd['precioUnidad'] . EURO, 'LR', 0, 'R', $fill);
         $pdf->Cell($w[2], 6, number_format($rowd['unidades']), 'LR', 0, 'R', $fill);
-        $pdf->Cell($w[3], 6, $rowd['precioUnidad']*number_format($rowd['unidades']) . "e", 'LR', 0, 'R', $fill);
-//        $pdf->Ln();
-//        $fill = !$fill;
-//        $preciototal = $preciototal + doubleval($row[3]);
-//
-//            echo "<div style='border: 1px solid red; width: 30%; margin: 15pt; padding: 10pt;'>";
-//            echo "id detalle: " . $rowd['idDetallePedido'] . "<br/>";
-//            echo "Producto num: " . $rowd['producto'] . "<br/>";
-//            echo "Precio unidad: " . $rowd['precioUnidad'] . "<br/>";
-//            echo "Cantidad: " . $rowd['unidades'] . "<br/>";
-//            echo "</div>";
+        $pdf->Cell($w[3], 6, $rowd['precioUnidad'] * number_format($rowd['unidades']) . EURO, 'LR', 0, 'R', $fill);
+        $fill = !$fill;
     }
     $pdf->Ln();
     $pdf->Cell(array_sum($w), 0, '', 'T');
-
 }
 
-    $pdf->Output();
+$pdf->Output();
