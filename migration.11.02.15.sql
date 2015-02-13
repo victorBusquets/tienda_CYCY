@@ -223,5 +223,5 @@ CREATE TABLE IF NOT EXISTS `cuenta` (
   `idCuenta` int(11) NOT NULL AUTO_INCREMENT,
   `cliente` int(11) DEFAULT NULL,
   `numCuenta` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`idCuenta`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
