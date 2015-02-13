@@ -34,6 +34,8 @@ aside {
       aside ul div:hover {
         background: #3985b9;
         color: white; }
+    aside ul div.goto-pdf {
+      background-color: #8c84c4; }
 
 main {
   width: 80%;
