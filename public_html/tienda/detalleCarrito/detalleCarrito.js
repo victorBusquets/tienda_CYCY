@@ -81,18 +81,17 @@ app.controller("DetalleCarritoController", ["$location", "$scope", "$http", "$ro
                     "Confirmar Compra": function() {
                         var id = $('#list').jqGrid('getGridParam', 'selrow');
                         var ret = $('#list').jqGrid('getRowData', id);
-                        var cuenta = ret.numCuenta;
+                        cuenta = ret.numCuenta;
                         $.ajax({
                             url: "detalleCarrito/getCuenta.php",
                             datatype: 'json',
                             method: "get",
                             success: function(data) {
-                                //var jsonEntrada = '{"cuentaOrigen":"' + cuenta + '", "cuentaDestino":"' + data.cuenta + '", "pin":' + data.pin + ', "cantidad":' + $scope.precioFinal + ', "concepto":"Crazy Cryzo Store"}';
-                                var jsonEntrada = '{"cuentaOrigen":"000000000000000000000001", "cuentaDestino":"000000000000000000000002", "pin":123456, "cantidad":55.5, "concepto":"Crazy Cryzo Store"}';
+                                var datos = "cuentaOrigen="+cuenta+"&cuentaDestino="+data.cuenta+"&pin="+data.pin+"&cantidad="+$scope.precioFinal+"&concepto=Crazy Cryzo Store";
                                 $.ajax({
-                                    url: "http://tomcat-cycycorpstore.rhcloud.com/api/Transaccion",
+                                    url: "detalleCarrito/curl.php",
                                     method: 'post',
-                                    data: jsonEntrada,
+                                    data: datos,
                                     success: function(data) {
                                         $scope.enviarCompra();
                                         $("#confirmar-compra").dialog("close");
